@@ -26,7 +26,7 @@ class ClientMetadata:
     version: int
 
     @classmethod
-    def default(cls) -> t.Self:
+    def python_api(cls) -> t.Self:
         return cls("Python", "RoturAPI", 1)
 
     @classmethod

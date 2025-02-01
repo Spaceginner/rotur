@@ -73,7 +73,7 @@ class ClientAgent:
     version: str
 
     @classmethod
-    def default(cls) -> t.Self:
+    def python_api(cls) -> t.Self:
         return cls("PyRoturAPI", "0.0.1")
 
     @classmethod
@@ -411,7 +411,7 @@ class _AccountManager:
 @dataclasses.dataclass(kw_only=True)
 class AccountManagerBuilder(PmsgHandlerBuilderI):
     account_server_id: str = "sys-rotur"  # todo auto-fetch
-    agent: ClientAgent = ClientAgent.default()
+    agent: ClientAgent = ClientAgent.python_api()
     user_token: str | None = None
 
     def finalise(

@@ -55,7 +55,7 @@ class BackendAPI:
             *,
             base_name: str | None = None,
             designator: str = "pyapi",
-            client: ClientMetadata = ClientMetadata.default(),
+            client: ClientMetadata = ClientMetadata.python_api(),
     ) -> None:
         self.designator = designator
 
