@@ -75,6 +75,9 @@ class BackendAPI:
         if not self._raw.link(["roturTW"]).is_ok:
             raise RuntimeError("linking to room failed")
 
+    def close(self) -> None:
+        self._raw.close()
+
     @t.overload
     def _on_ulist_update(self, mode: t.Literal[UListMode.SET], users: list[str]) -> None: ...
     @t.overload

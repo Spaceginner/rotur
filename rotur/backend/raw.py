@@ -60,6 +60,10 @@ class RawBackendAPI:
         self._ws_h_worker.start()
         self._ws_l_worker.start()
 
+    # todo into more proper context manager api
+    def close(self) -> None:
+        self._ws.close()
+
     def _ws_listener(self) -> None:
         for msg in self._ws:
             if not isinstance(msg, str):
