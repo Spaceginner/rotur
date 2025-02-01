@@ -4,7 +4,6 @@ import abc
 import random
 import string
 
-from .._logger import logger
 from .raw import RawBackendAPI
 from .schema import ClientMetadata, JsonValue, Status, UListMode
 
