@@ -187,15 +187,15 @@ class _AccountManager:
                     else:
                         self._on_r_login.succed(payload["first_login"], payload["token"], payload["payload"])
                 case "New_Account":
-                    if payload == "Account Created Successfully":
+                    if (payl := payload["payload"]) == "Account Created Successfully":
                         self._on_r_create_account.succed()
                     else:
-                        self._on_r_create_account.failed(payload)
+                        self._on_r_create_account.failed(payl)
                 case "Update":
-                    if payload == "Account Updated Successfully":
+                    if (payl := payload["payload"]) == "Account Updated Successfully":
                         self._on_r_update.succed()
                     else:
-                        self._on_r_update.failed(payload)
+                        self._on_r_update.failed(payl)
                 case "account_update":
                     if (v := payload["value"]) is not None:
                         self.user.data._inner[payload["key"]] = v
