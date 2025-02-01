@@ -157,21 +157,21 @@ class _AccountManager:
     _on_r_create_account: FailingSignal[
         [],
         [str],
-    ]
+    ] = dataclasses.field(init=False, default_factory=FailingSignal)
     """args:
     <succ> <none>;
     <fail> reason"""
     _on_r_update: FailingSignal[
         [],
         [str],
-    ]
+    ] = dataclasses.field(init=False, default_factory=FailingSignal)
     """args:
     <succ> <none>;
     <fail> reason"""
     _on_r_delete_account: FailingSignal[
         [],
         [str],
-    ]
+    ] = dataclasses.field(init=False, default_factory=FailingSignal)
     """args:
     <succ> <none>;
     <fail> reason"""
