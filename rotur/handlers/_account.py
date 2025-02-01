@@ -351,9 +351,12 @@ class _AccountManager:
 
     def create_acc(self, username: str, password: str) -> None:
         is_succ, resp = self._fetch(
-            "Create_Account",
+            "New_Account",
             self._on_r_create_account,
-            [username, self._hash_pwd(password)]
+            {
+                "username": username,
+                "password": self._hash_pwd(password),
+            }
         )
 
         if not is_succ:
